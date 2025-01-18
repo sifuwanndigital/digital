@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sifuwann Digital</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+      }
+      header {
+        background-color: #2c3e50;
+        color: white;
+        padding: 1.5rem;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0;
+      }
+      nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: #34495e;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        font-weight: bold;
+      }
+      nav a:hover {
+        background-color: #2c3e50;
+        transition: 0.3s;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 1rem;
+      }
+      .section {
+        margin-bottom: 2rem;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .section h2 {
+        color: #2c3e50;
+      }
+      footer {
+        background-color: #34495e;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+      }
+      .button {
+        display: inline-block;
+        background-color: #2c3e50;
+        color: white;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      .button:hover {
+        background-color: #1abc9c;
+        transition: 0.3s;
+      }
+      .post-section {
+        margin-top: 2rem;
+      }
+      .post-form {
+        margin-bottom: 2rem;
+      }
+      .post-form textarea {
+        width: 100%;
+        height: 100px;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+      .post-form button {
+        margin-top: 1rem;
+        padding: 0.8rem 1.5rem;
+        background-color: #2c3e50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .post-form button:hover {
+        background-color: #1abc9c;
+        transition: 0.3s;
+      }
+      .post-list {
+        list-style: none;
+        padding: 0;
+      }
+      .post-list li {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      /* Mobile Styles */
+      @media (max-width: 768px) {
+        header {
+          padding: 1rem;
+        }
+        nav a {
+          padding: 0.8rem 1rem;
+          font-size: 0.9rem;
+        }
+        .section {
+          padding: 1.5rem;
+        }
+        .button {
+          padding: 0.6rem 1rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        header h1 {
+          font-size: 1.5rem;
+        }
+        nav {
+          flex-direction: column;
+          align-items: center;
+        }
+        .section {
+          padding: 1rem;
+        }
+        .post-form textarea {
+          height: 80px;
+        }
+      }
+    </style>
+    <script>
+      function addPost(event) {
+        event.preventDefault();
+        const postContent = document.getElementById("postContent").value;
+        if (postContent.trim() === "") {
+          alert("Please write something before posting!");
+          return;
+        }
+        const postList = document.getElementById("postList");
+        const newPost = document.createElement("li");
+        newPost.textContent = postContent;
+        postList.prepend(newPost);
+        document.getElementById("postContent").value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Sifuwann Digital</h1>
+      <p>Your Partner in Digital Marketing Success</p>
+    </header>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+      <div id="home" class="section">
+        <h2>Home</h2>
+        <p>
+          At Sifuwann Digital, we help businesses achieve their digital
+          marketing goals through tailored strategies and cutting-edge
+          solutions.
+        </p>
+        <a href="#services" class="button">Explore Our Services</a>
+      </div>
+      <div id="about" class="section">
+        <h2>About Us</h2>
+        <p>
+          Sifuwann Digital is a leading digital marketing agency committed to
+          helping businesses grow online. With years of expertise, we specialize
+          in social media management, SEO, and online advertising campaigns.
+        </p>
+        <img
+          fetchpriority="high"
+          decoding="async"
+          src="https://www.digitalsilk.com/wp-content/uploads/2022/11/Digital-Marketing-Agency-1-526x589.png"
+          alt="Digital Silk is a web design and digital marketing agency"
+          width="100%"
+          style="max-width: 500px; height: auto"
+        />
+      </div>
+      <div id="services" class="section">
+        <h2>Our Services</h2>
+        <ul>
+          <li>
+            <strong>Social Media Marketing:</strong> Build a strong presence on
+            platforms like Facebook, Instagram, and TikTok.
+          </li>
+          <li>
+            <strong>Search Engine Optimization (SEO):</strong> Improve your
+            website's visibility on search engines.
+          </li>
+          <li>
+            <strong>Pay-Per-Click Advertising:</strong> Drive targeted traffic
+            to your website with effective ad campaigns.
+          </li>
+          <li>
+            <strong>Content Creation:</strong> Engage your audience with
+            high-quality content tailored to your brand.
+          </li>
+        </ul>
+      </div>
+      <div id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>
+          Ready to take your business to the next level? Reach out to us today!
+        </p>
+        <p>
+          Email:
+          <a href="mailto:info@sifuwanndigital.com">info@sifuwanndigital.com</a>
+        </p>
+        <p>Phone: +60 123-456-789</p>
+      </div>
+      <div class="post-section section">
+        <h2>Post Your Idea</h2>
+        <form class="post-form" onsubmit="addPost(event)">
+          <textarea
+            id="postContent"
+            placeholder="Share your ideas..."
+          ></textarea>
+          <button type="submit">Post</button>
+        </form>
+        <ul id="postList" class="post-list">
+          <!-- Posts will appear here -->
+        </ul>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; 2025 Sifuwann Digital. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
